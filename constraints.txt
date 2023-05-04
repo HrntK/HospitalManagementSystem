@@ -1,0 +1,21 @@
+ALTER TABLE employee ADD CONSTRAINT chk_salary CHECK (salary > 0);
+ALTER TABLE patient ADD CONSTRAINT chk_blood_group CHECK (
+  blood_group IN ('A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-')
+);
+ALTER TABLE medicine ADD CONSTRAINT chk_medicine_cost CHECK (medicine_cost >= 0);
+ALTER TABLE room ADD CONSTRAINT chk_room_cost CHECK (room_cost > 0);
+ALTER TABLE bill ADD CONSTRAINT chk_total CHECK (Total > 0);
+ALTER TABLE employee ADD CONSTRAINT chk_joining_date CHECK (
+  date_of_leaving IS NULL OR joining_date < date_of_leaving
+);
+
+select * from user_constraints where table_name='EMPLOYEE';
+select * from user_constraints where table_name='DEPARTMENT';
+select * from user_constraints where table_name='PATIENT';
+select * from user_constraints where table_name='MEDICINE';
+select * from user_constraints where table_name='BILL';
+select * from user_constraints where table_name='DOCTOR';
+select * from user_constraints where table_name='NURSE';
+select * from user_constraints where table_name='RELETIVE';
+select * from user_constraints where table_name='ROOM';
+select * from user_constraints where table_name='TEST';

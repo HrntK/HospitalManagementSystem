@@ -1,0 +1,70 @@
+CREATE OR REPLACE TRIGGER trg_department
+AFTER INSERT  ON department
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+
+CREATE OR REPLACE TRIGGER trg_emp
+AFTER INSERT  ON employee
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_patient
+AFTER INSERT  ON patient
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_medicine
+AFTER INSERT  ON medicine
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_bill
+AFTER INSERT  ON bill
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_doctor
+AFTER INSERT  ON doctor
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_nurse
+AFTER INSERT  ON nurse
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_reletive
+AFTER INSERT  ON reletive
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_room
+AFTER INSERT  ON room
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;
+
+CREATE OR REPLACE TRIGGER trg_test
+AFTER INSERT  ON test
+FOR EACH ROW
+BEGIN
+   dbms_output.put_line('Rows is inserted');
+END;

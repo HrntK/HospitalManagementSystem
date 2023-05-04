@@ -1,0 +1,102 @@
+create table department(
+    department_id int primary key,
+    dep_name varchar(256) not null,
+    dep_head varchar(256) not null
+);
+
+create table employee(
+    employee_id int primary key,
+    employee_name varchar(256) not null,
+    dob date not null,
+    joining_date date not null,
+    emp_type varchar(256) not null,
+    email varchar(256) not null,
+    address varchar(256) not null,
+    salary int not null,
+    date_of_leaving date,
+    department_id int,
+    foreign key (department_id) references department(department_id)
+);
+
+create table patient(
+    patient_id int primary key,
+    patient_name varchar(256) not null,
+    phone_no varchar(256) not null,
+    blood_group varchar(256) not null,
+    email varchar(256) not null,
+    gender varchar(256) not null,
+    address varchar(256) not null,
+    disease varchar(256) not null,
+    arrival_date date not null,
+    discharge_date date not null
+);
+
+create table medicine(
+    medicine_id int primary key,
+    medicine_name varchar(256) not null,
+    quantity int not null,
+    med_date date not null,
+    medicine_cost int not null,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id)
+);
+
+create table bill(
+    payment_id int primary key,
+    bill_date date not null,
+    room_cost int not null,
+    other_charges number(3) default null,
+    mcost int not null,
+    Total int not null,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id)
+);
+
+create table doctor(
+    doctor_id int primary key,
+    qualification varchar(50) not null,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id),
+    employee_id int,
+    foreign key(employee_id) references employee(employee_id)
+);
+
+create table nurse(
+    nurse_id int Primary key,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id),
+    employee_id int,
+    foreign key(employee_id) references employee(employee_id)
+);
+
+create table reletive(
+    reletive_id int Primary key,
+    reletive_name varchar(50) Not null,
+    reletive_contact varchar(50) not null,
+    relation varchar(50) not null,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id)
+);
+
+create table room(
+    room_id int primary key,
+    room_type varchar(30) not null,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id),
+    room_cost int not null
+);
+
+create table test(
+    test_id int Primary key,
+    test_name Varchar(60) Not null,
+    test_cost int Not null,
+    date1 date not null,
+    patient_id int,
+    foreign key(patient_id) references patient(patient_id)
+);
+
+
+
+
+
+

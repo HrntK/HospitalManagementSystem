@@ -1,0 +1,42 @@
+--Procedure to insert a new department record into the department table
+CREATE OR REPLACE PROCEDURE insert_department(department_id IN INT, dep_name IN VARCHAR2, dep_head IN VARCHAR2) AS
+BEGIN
+  INSERT INTO department VALUES (department_id, dep_name, dep_head);
+  COMMIT;
+  DBMS_OUTPUT.PUT_LINE('Department record inserted successfully!');
+EXCEPTION
+  WHEN OTHERS THEN
+    ROLLBACK;
+    DBMS_OUTPUT.PUT_LINE('Error inserting department record: ' || SQLERRM);
+END;
+
+begin
+insert_department(6,'Opthalamology','Shivani');
+end;
+
+
+
+--Function to calculate the total salary paid to employees in a particular department
+CREATE OR REPLACE FUNCTION get_department_salary(department_id IN INT) RETURN INT AS
+  total_salary INT;
+BEGIN
+  SELECT SUM(salary) INTO total_salary
+  FROM employee
+  WHERE department_id = department_id;
+  
+  RETURN total_salary;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('No employees found in department');
+    RETURN 0;
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error calculating department salary: ' || SQLERRM);
+    RETURN 0;
+END;
+
+declare
+    sal number;
+begin
+sal:=get_department_salary(6);
+dbms_output.put_line('Salary is: '||sal);
+end;

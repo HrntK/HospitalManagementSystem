@@ -1,0 +1,28 @@
+BEGIN
+INSERT INTO department(department_id, dep_name, dep_head)
+VALUES(1, 'Marketing', 'John Smith');
+EXCEPTION
+WHEN OTHERS THEN
+DBMS_OUTPUT.PUT_LINE('Error inserting department record: ' || SQLERRM);
+END;
+
+BEGIN
+UPDATE employee
+SET salary = 50000
+WHERE employee_id = 16;
+EXCEPTION
+WHEN NO_DATA_FOUND THEN
+DBMS_OUTPUT.PUT_LINE('Employee record not found');
+WHEN OTHERS THEN
+DBMS_OUTPUT.PUT_LINE('Error updating employee record: ' || SQLERRM);
+END;
+
+BEGIN
+DELETE FROM patient
+WHERE patient_id = 1;
+EXCEPTION
+WHEN NO_DATA_FOUND THEN
+DBMS_OUTPUT.PUT_LINE('Patient record not found');
+WHEN OTHERS THEN
+DBMS_OUTPUT.PUT_LINE('Error deleting patient record: ' || SQLERRM);
+END;

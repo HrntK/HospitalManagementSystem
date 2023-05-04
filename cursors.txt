@@ -1,0 +1,38 @@
+DECLARE
+CURSOR C1 IS SELECT * FROM employee order by salary desc ;
+rec employee%rowtype;
+begin
+FOR rec in C1 loop
+ dbms_output.put_line(rec.employee_id||'  '||rec.employee_name||'         '||rec.emp_type||'       '||rec.email||'          '||rec.salary);   
+end loop;
+END;
+
+
+DECLARE
+CURSOR C1 IS SELECT * FROM employee where emp_type='Doctor';
+rec employee%rowtype;
+begin
+FOR rec in C1 loop
+ dbms_output.put_line(rec.employee_id||'  '||rec.employee_name||'         '||rec.emp_type||'       '||rec.email||'          '||rec.salary);   
+end loop;
+END;
+
+DECLARE
+CURSOR C1 IS SELECT * FROM employee where emp_type='Nurse';
+rec employee%rowtype;
+begin
+FOR rec in C1 loop
+ dbms_output.put_line(rec.employee_id||'  '||rec.employee_name||'         '||rec.emp_type||'       '||rec.email||'          '||rec.salary);   
+end loop;
+END;
+
+DECLARE
+  CURSOR emp_dept_cur IS
+    SELECT e.employee_name, d.dep_name
+    FROM employee e
+    JOIN department d ON e.department_id = d.department_id;
+BEGIN
+  FOR emp_dept_rec IN emp_dept_cur LOOP
+    DBMS_OUTPUT.PUT_LINE(emp_dept_rec.employee_name || ' works in ' || emp_dept_rec.dep_name);
+  END LOOP;
+END;

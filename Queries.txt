@@ -1,0 +1,33 @@
+--List all the patients who are currently admitted to the hospital.
+SELECT * FROM patient WHERE discharge_date IS NULL;
+
+--List all the doctors and nurses along with the department they belong to.
+SELECT e.employee_name, e.emp_type, d.dep_name 
+FROM employee e 
+JOIN department d ON e.department_id = d.department_id
+WHERE e.emp_type IN ('Doctor', 'Nurse');
+
+--List all the patients along with the room they are currently occupying.
+SELECT p.patient_name, r.room_type 
+FROM patient p 
+JOIN room r ON p.patient_id = r.patient_id 
+WHERE r.patient_id IS NOT NULL;
+
+--List all the patients along with the tests they have undergone.
+SELECT p.patient_name, t.test_name, t.date1 
+FROM patient p 
+JOIN test t ON p.patient_id = t.patient_id;
+
+--List all the patients along with the medicines they have been prescribed.
+SELECT p.patient_name, m.medicine_name, m.quantity, m.med_date 
+FROM patient p 
+JOIN medicine m ON p.patient_id = m.patient_id;
+
+--List all the patients along with their total bill amount.
+SELECT p.patient_name, b.Total 
+FROM patient p 
+JOIN bill b ON p.patient_id = b.patient_id;
+
+--List all the relatives of a particular patient.
+SELECT * FROM reletive WHERE patient_id = 1001;
+

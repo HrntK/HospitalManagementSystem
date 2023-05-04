@@ -1,0 +1,74 @@
+insert into department values(1,'Dermatology','Dr Rajesh');
+insert into department values(2,'Gynaecology','Dr Harneet');
+insert into department values(3,'Psychiatric','Dr Shiya');
+insert into department values(4,'Neurology','Dr Ridhi');
+insert into department values(5,'Pediatric','Dr Ira');
+
+
+insert into employee values(101,'Dr Rajesh','10-November-1965','12-November-1987','Doctor','drrajesh@gmail.com','Patiala',150000,NULL,1);
+insert into employee values(102,'Sunita','10-May-1985','18-November-2013','Nurse','sunita@gmail.com','Rajpura',28000,NULL,1);
+insert into employee values(103,'Dr Harneet','02-May-1965','10-December-1989','Doctor','harneetkaur@gmail.com','Sangrur',200000,NULL,2);
+insert into employee values(104,'Geeta','10-December-1987','12-June-2014','Nurse','geeta@gmail.com','Patiala',27000,NULL,2);
+insert into employee values(105,'Dr Shiya','20-March-1969','12-November-1987','Doctor','shiyamer@gmail.com','Patiala',250000,NULL,3);
+insert into employee values(106,'Mehek','3-October-1988','12-November-2016','Nurse','mehekkumari@gmail.com','Delhi',27000,NULL,3);
+insert into employee values(107,'Dr Ridhi','10-November-1968','12-November-1988','Doctor','ridhithakur@gmail.com','Rajpura',290000,NULL,4);
+insert into employee values(108,'Babita','18-July-1986','12-August-2013','Nurse','babitakumari@gmail.com','Ambala',29000,NULL,4);
+insert into employee values(109,'Dr Ira','10-February-1963','12-November-1984','Doctor','iragupta@gmail.com','Sunam',270000,NULL,5);
+insert into employee values(110,'Swati','10-June-1984','12-july-2017','Nurse','swatisingla@gmail.com','Sangrur',25000,NULL,5);
+
+
+insert into patient values(1001,'Ishan','7807324202','B+','ishansharma@gmail.com','Male','Palampur','Skin Infection','12-January-2023','15-January-2023');
+insert into patient values(1003,'Isha','7087392306','O+','ishanarang@gmail.com','Female','Abohar','Pregnant','29-April-2023','02-May-2023');
+insert into patient values(1002,'Harman','9815366304','B-','harmandip@gmail.com','Male','Patiala','Anxiety','27-May-2022','29-May-2022');
+insert into patient values(1004,'Shivam','9815381061','A-','shivambector@gmail.com','Male','Chandigarh','Nerve Dislocation','27-April-2023','30-April-2023');
+insert into patient values(1005,'Khushpreet','8699298079','A+','khushpreetgill@gmail.com','Female','Sangrur','Cold and Fever','15-March-2023','16-March-2023');
+
+
+
+insert into medicine values(11,'Acetaminophen',50,'12-september-2035',4000,1001);
+insert into medicine values(12,'Adderall',100,'14-october-2030',2000,1002);
+insert into medicine values(13,'Amitriptyline',150,'25-May-2030',1000,1003);
+insert into medicine values(14,'Amlodipine',200,'26-December-2029',4050,1004);
+insert into medicine values(15,'Azithromycin',250,'27-January-2029',3000,1005);
+
+
+insert into bill values(991,'15-January-2023',1000,300,4000,5300,1001);
+insert into bill values(992,'30-April-2023',2000,100,2000,4100,1002);
+insert into bill values(993,'02-May-2003',1500,200,1000,2700,1003);
+insert into bill values(994,'29-May-2022',3000,600,4050,7650,1004);
+insert into bill values(995,'16-March-2023',3500,500,3000,7000,1005);
+
+
+insert into doctor values(111,'MBBS MD Dermatology',1001,101);
+insert into doctor values(112,'MBBS MD Gynaecology',1002,102);
+insert into doctor values(113,'MBBS MD Psychology',1003,103);
+insert into doctor values(114,'MBBS MD Neurology',1004,104);
+insert into doctor values(115,'MBBS MD Paediatric',1005,105);
+
+
+insert into nurse values(31,1001,102);
+insert into nurse values(32,1002,104);
+insert into nurse values(33,1003,106);
+insert into nurse values(34,1004,108);
+insert into nurse values(35,1005,110);
+
+
+insert into reletive values(21,'Manvir','9856232652','Friend',1001);
+insert into reletive values(23,'Swastik','9812332652','Husband',1002);
+insert into reletive values(24,'Gunavri','9812342652','Wife',1003);
+insert into reletive values(22,'Shivangi','9853232652','Sister',1004);
+insert into reletive values(25,'Jovan','98568692652','Brother',1005);
+
+
+insert into room values(61,'Single Bed',1001,1000);
+insert into room values(62,'Double Bed',1002,2000);
+insert into room values(63,'Single Bed',1003,1500);
+insert into room values(64,'Single Bed',1004,3000);
+insert into room values(65,'Double Bed',1005,3500);
+
+
+insert into test values(291,'Thyroid test',300,'15-January-2023',1001);
+insert into test values(292,'Ultrasound scan',100,'30-April-2023',1002);
+insert into test values(293,'MRI',200,'02-May-2003',1003);
+insert into test values(294,'Cholestrol test',600,'29-May-2022',1004);
+insert into test values(295,'Blood test',500,'16-March-2023',1005);
